@@ -61,11 +61,27 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-| Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| **Azure Resource**            | **Service Tier**            | **Monthly Cost**            |
+|-------------------------------|-----------------------------|-----------------------------|
+| **Azure Web App**             | Basic (B1)                  | $13.14                      |
+| **Azure Function App**        | Consumption Plan            | $0 - ~$10 (usage-based)     |
+| **Azure PostgreSQL Database** | Basic or Serverless         | $5 - ~$25 (usage-based)     |
+| **Azure Service Bus**         | Basic                       | ~$0.05 per million operations |
+| **Azure SQL Database**        | Serverless                  | $5 - ~$25 (scales with use) |
+| **Azure Application Insights**| Basic                       | $5 - ~$15 (based on volume) |
+| **Azure Storage Account**     | Blob Storage                | ~$0.01/GB 
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+**Azure Web App**: A scalable platform for hosting the web application, leveraging the Basic tier to support development and light production needs without the expense of higher-tier plans.
+
+- **Azure Function App**: A serverless function platform suitable for background or on-demand tasks. With a consumption plan, charges are incurred only when the function is executed, making it ideal for infrequent or low-volume tasks.
+
+- **Azure PostgreSQL Database**: A reliable, managed relational database service. The Basic or Serverless tier offers automatic scaling and pauses during idle periods, which can reduce costs.
+
+- **Azure Service Bus**: Enables message queuing and communication between application components. Using the Basic tier keeps costs low while still providing essential messaging capabilities.
+
+- **Azure SQL Database**: A serverless SQL database that adjusts resources according to demand and pauses during inactivity, offering a cost-effective solution for variable workloads.
+
+- **Azure Application Insights**: Provides application monitoring to ensure health and performance. A basic data ingestion tier is used to keep monitoring costs manageable.
+
+- **Azure Storage Account**: Blob Storage is utilized for storing static files or backups. The pay-as-you-go pricing ensures costs are aligned with actual storage needs, keeping expenses minimal.
