@@ -2,11 +2,11 @@
     "scriptFile": "__init__.py",
     "bindings": [
       {
-        "name": "msg",
+        "name": "message",
         "type": "serviceBusTrigger",
         "direction": "in",
         "queueName": "notificationqueue",
-        "connection": "{{connection}}"
+        "connection": "AzureWebJobsServiceBus"
       }
     ]
   }
